@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Container from "@material-ui/core/Container";
+import Header from "./components/Header";
+import SelectCountry from "./components/SelectCountry";
+import {Route, Switch} from 'react-router-dom';
+import DetailTemp from "./components/DetailTemp";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+    render() {
+        const {store} = this.props;
+        return (
+            <>
+                <Header/>
+                <Container className="content" maxWidth="md">
+                    <Switch>
+                        <Route exact path='/' render={() => <SelectCountry store={store}/>}/>
+                        <Route path='/details/:id?' render={(props) => <DetailTemp {...props} store={store}/>}/>
+                    </Switch>
+                </Container>
+            </>
+        );
+    }
 }
 
 export default App;
