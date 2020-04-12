@@ -58,8 +58,8 @@ class SelectCountry extends React.Component {
                                 defaultValue="default"
                                 onChange={(e) => store.chooseCity(+e.target.value)}
                                 inputProps={{
-                                    name: 'age',
-                                    id: 'age-native-simple',
+                                    name: 'city',
+                                    id: 'city-list',
                                 }}>
                             <option disabled value="default">click to select</option>
                             { this.renderOption() }
@@ -68,7 +68,6 @@ class SelectCountry extends React.Component {
                     <Grid item xs={12}>
                         <List>
                             {this.renderSelectedCitites()}
-
                             {store.isFetching ?  <ListItem className="list_item" align={"center"}><CircularProgress color="secondary"/></ListItem> : null}
                         </List>
                     </Grid>

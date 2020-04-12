@@ -54,6 +54,11 @@ class AppStore {
                     this.selectedCities.push(cityId);
                     this.isFetching = false;
                 });
+            }, error => {
+                runInAction(() => {
+                    alert(error);
+                    this.isFetching = false;
+                })
             });
     }
 
@@ -70,6 +75,11 @@ class AppStore {
                 this.currentCityFullInfo = {...answer.data.getWeather};
                 this.isFetching = false;
             });
+        }, error => {
+            runInAction(() => {
+                alert(error);
+                this.isFetching = false;
+            })
         })
     }
 }
