@@ -1,5 +1,5 @@
 import React from "react";
-import {observer} from "mobx-react";
+import {inject, observer} from "mobx-react";
 import {NavLink} from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -77,4 +77,8 @@ class SelectCountry extends React.Component {
     }
 }
 
-export default SelectCountry;
+const injection = ({ store }) => ({
+    store
+});
+
+export default inject(injection)(observer(SelectCountry));

@@ -68,7 +68,7 @@ class AppStore {
 
     @action getFullInfo(cityId) {
         const cityData = this.cities.find(city => city.id === cityId);
-        if (!cityData) return
+        if (!cityData) return;
         this.isFetching = true;
         return apiClient.fetchCityFull(cityData.name, cityData.countryCode).then(answer => {
             runInAction(() => {

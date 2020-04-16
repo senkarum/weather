@@ -15,8 +15,8 @@ class App extends React.Component {
                 <Header/>
                 <Container className="content" maxWidth="md">
                     <Switch>
-                        <Route exact path='/' render={() => <SelectCountry store={store}/>}/>
-                        <Route path='/details/:id?' render={(props) => <DetailTemp {...props} store={store}/>}/>
+                        <Route exact path='/' render={() => <SelectCountry/>}/>
+                        <Route path='/details/:id?' render={(props) => <DetailTemp {...props}/>}/>
                     </Switch>
                 </Container>
             </>

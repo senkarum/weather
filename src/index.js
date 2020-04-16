@@ -6,11 +6,15 @@ import AppStore from './stores/appStore';
 import {
     BrowserRouter as Router,
 } from "react-router-dom";
+import {Provider} from "mobx-react";
 
 const store = new AppStore();
 
 ReactDOM.render(
     <Router>
-        <App store={store}/></Router>,
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    </Router>,
     document.getElementById('root')
 );

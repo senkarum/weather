@@ -1,5 +1,5 @@
 import React from "react";
-import {observer} from "mobx-react";
+import {inject, observer} from "mobx-react";
 import {NavLink} from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import {Paper} from "@material-ui/core";
@@ -93,4 +93,8 @@ class DetailTemp extends React.Component {
     }
 }
 
-export default DetailTemp
+const injection = ({ store }) => ({
+    store
+});
+
+export default inject(injection)(observer(DetailTemp));
