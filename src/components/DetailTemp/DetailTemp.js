@@ -13,7 +13,6 @@ import TableBody from "@material-ui/core/TableBody";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 
-@observer
 class DetailTemp extends React.Component {
     state = {
 

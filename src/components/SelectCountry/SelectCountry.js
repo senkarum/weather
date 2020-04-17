@@ -13,7 +13,6 @@ import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 
-@observer
 class SelectCountry extends React.Component {
 
     renderOption() {
